@@ -10,3 +10,7 @@ Commands used to execute upload of pact-file and doing pact verification on Prov
 mvn pact:publish
 
 mvn pact:verify
+
+Note: I don't clame to have a perfect understanding of Pact and Pact-JVM. This is more of a "note to self" and others who are just starting to learn what Pact-JVM is all about. Qusetions are welcome: mattiasmgn@gmail.com
+
+This example might soon be out of date. This was created in December 2017. 
