@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>se.ff.bsc</groupId>
+  <artifactId>client</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>client</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>fluent-hc</artifactId>
+      <version>4.5.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/au.com.dius/pact-jvm-consumer-junit -->
+    <dependency>
+      <groupId>au.com.dius</groupId>
+      <artifactId>pact-jvm-consumer-junit_2.12</artifactId>
+      <version>3.5.10</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20171018</version>
+    </dependency>
+
+  </dependencies>
+  <build>
+  <plugins>
+    <plugin>
+<!-- mvn pact:publish  -->
+      <groupId>au.com.dius</groupId>
+      <artifactId>pact-jvm-provider-maven_2.11</artifactId>
+      <version>3.5.10</version>
+      <configuration>
+        <pactDirectory>../pacts</pactDirectory> <!-- Defaults to ${project.build.directory}/pacts -->
+        <pactBrokerUrl>http://localhost:8113</pactBrokerUrl>
+        <projectVersion>${project.version}</projectVersion> <!-- Defaults to ${project.version} -->
+        <trimSnapshot>true</trimSnapshot> <!-- Defaults to false -->
+      </configuration>
+    </plugin>
+  </plugins>
+  </build>
+</project>
