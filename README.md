@@ -16,7 +16,11 @@ Note: I don't clame to have a perfect understanding of Pact and Pact-JVM. This i
 This example might soon be out of date. This was created in December 2017. 
 
 Links:
+
 https://github.com/DiUS/pact_broker-docker
+
 https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit
+
 https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-junit
+
 https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-maven
